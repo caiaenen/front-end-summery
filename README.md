@@ -1,2 +1,2 @@
 # front-end-summery
-对我而言,一些关于前端可以注意记录的点
+What's learned from books is superficial after all. It's crucial to have it personally tested somehow.
