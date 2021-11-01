@@ -1,2 +1,2 @@
 # front-end-summery
-summery of the notable experience
+对我而言,一些关于前端可以注意记录的点
