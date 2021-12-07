@@ -36,7 +36,7 @@ eg.$refs
 在子组件中可以通过$attr拿到父组件中的没被props的所有属性，可以通过$listener获取父组件中没被v-on事件监听的事件。
 
 ### 4. provide/inject
-使用一对 provide 和 inject,无论组件层次结构有多深，父组件都可以作为其所有子组件的依赖提供者。这个特性有两个部分：父组件有一个 provide 选项来提供数据，子组件有一个 inject 选项来开始使用这些数据。[[[vue官网]]]
+使用一对 provide 和 inject,无论组件层次结构有多深，父组件都可以作为其所有子组件的依赖提供者。这个特性有两个部分：父组件有一个 provide 选项来提供数据，子组件有一个 inject 选项来开始使用这些数据。([[vue官网]])
 <img src="../img/vue/components_provide.png" width="50%">
 
 ### 5. vuex
@@ -82,4 +82,4 @@ mounted() {
 },
 ```
 总结：用于父子组件的方式是以上6种,可以在多重组件中用的是3. $attrs/$listeners,4. provide/inject,5. vuex和6. bus。可以用于没有什么祖孙关系的组件传值的有5. vuex和6. bus。
-[vue官网]https://v3.cn.vuejs.org/guide/component-provide-inject.html
+https://v3.cn.vuejs.org/guide/component-provide-inject.html[vue官网]
