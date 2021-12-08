@@ -1,4 +1,4 @@
-# 几种常见的组件传值方式
+# 几种常见的组件传值方式 🍞	
 ### 1. props/$emit
 在父组件中的子组件上加:传递属性值="传入的值",子组件模块加入props属性，如下图：
 ``` vue
@@ -53,7 +53,7 @@ const app = {
   }}
 ```
 
-## 6. bus
+### 6. bus
 bus是个新的vue对象，但是主要用于传值。实现方式，可以在全局声明一个bus
 ```
 //main.js中
@@ -81,5 +81,7 @@ mounted() {
   })
 },
 ```
-总结：用于父子组件的方式是以上6种,可以在多重组件中用的是3. $attrs/$listeners,4. provide/inject,5. vuex和6. bus。可以用于没有什么祖孙关系的组件传值的有5. vuex和6. bus。
+
+### 总结
+用于父子组件的方式是以上6种,可以在多重组件中用的是3. $attrs/$listeners,4. provide/inject,5. vuex和6. bus。可以用于没有什么祖孙关系的组件传值的有5. vuex和6. bus。
 https://v3.cn.vuejs.org/guide/component-provide-inject.html[vue官网]
