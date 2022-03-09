@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">bold</button>
+    <div contenteditable="true"></div>
+</body>
+<script>
+    let btn = document.getElementById('btn')
+    btn.addEventListener('click',()=>{
+        document.execCommand('bold',false,null)
+    })
+    function
+ saveSelection() { 
+// 保存当前Range对象
+
+    let selection = window.getSelection();
+
+    if(selection.rangeCount > 0){
+
+      return sel.getRangeAt(0);
+
+    }
+
+    return null
+;
+
+};
+
+let selectedRange = saveSelection();
+
+function restoreSelection() {
+
+    let selection = window.getSelection();
+
+    if(selectedRange) {
+
+        selection.removeAllRanges();  
+// 清空所有 Range 对象
+
+        selection.addRange(selectedRange); 
+// 恢复保存的 Range
+
+    }
+
+}
+</script>
+</html>

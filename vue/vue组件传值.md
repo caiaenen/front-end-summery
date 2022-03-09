@@ -1,6 +1,6 @@
 # 几种常见的组件传值方式 🍞	
 ### 1. props/$emit
-在父组件中的子组件上加:传递属性值="传入的值",子组件模块加入props属性，如下图：
+在父组件中的子组件上加:传递属性值="传入的值",子组件模块加入props属性，如下：
 ``` vue
     //父组件视图
     <parent>
@@ -16,9 +16,31 @@
         },
     </script>
 ```
+在子组件用$emit传递参数给父组件，如下：
+``` 
+    //子组件方法
+    methods: {
+    todo: function () {
+       //this.$refs.sonComponent.$emit('ok',prams) //调用父组件的ok方法，并传递prams参数
+    }
+    }
+    
+    //父组件视图
+    <parent @click="ok">
+    </parent>
+    //父组件方法
+     methods: {
+    ok: function (prams) {
+      //获取子组件的prams参数
+    }
+    }
+    
+```
+
+
 ### 2. $refs/$parent/$children
 可以通过$refs/$children获取子组件的属性和方法,$parent获取父组件的属性和方法。
-eg.$refs
+如下为.$refs例子。
 ``` vue
     //父组件视图
     <parent>
@@ -33,7 +55,7 @@ eg.$refs
 ```
 
 ### 3. $attrs/$listeners
-在子组件中可以通过$attr拿到父组件中的没被props的所有属性，可以通过$listener获取父组件中没被v-on事件监听的事件。
+在子组件中可以通过$attrs拿到父组件中的没被props的所有属性，可以通过$listener获取父组件中没被v-on事件监听的事件。
 
 ### 4. provide/inject
 使用一对 provide 和 inject,无论组件层次结构有多深，父组件都可以作为其所有子组件的依赖提供者。这个特性有两个部分：父组件有一个 provide 选项来提供数据，子组件有一个 inject 选项来开始使用这些数据。([[vue官网]])
@@ -84,4 +106,5 @@ mounted() {
 
 ### 总结
 用于父子组件的方式是以上6种,可以在多重组件中用的是3. $attrs/$listeners,4. provide/inject,5. vuex和6. bus。可以用于没有什么祖孙关系的组件传值的有5. vuex和6. bus。
+
 https://v3.cn.vuejs.org/guide/component-provide-inject.html[vue官网]

@@ -1,0 +1,2 @@
+# vuex的action和mutation
+vuex中mutation需要处理同步的事务，action处理异步的事务。官网和很多文档都是摘取一个例子,但是
